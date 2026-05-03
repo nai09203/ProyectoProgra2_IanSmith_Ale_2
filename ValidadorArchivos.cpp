@@ -1,0 +1,31 @@
+//
+// Created by ian20 on 5/1/2026.
+//
+
+#include "ValidadorArchivos.h"
+#include "ArchivoInvalido.hpp"
+#include "FormatoInvalido.hpp"
+
+void ValidadorArchivos::validarAperturaArchivo(bool abierto, const std::string &ruta) {
+
+    if (!abierto) {
+
+        throw ArchivoInvalido("No se pudo abrir el Archivo" + ruta);
+    }
+}
+
+void ValidadorArchivos::validarLineaNoVaciaArchivo(const std::string &linea, int numeroLinea) {
+
+    if (linea.empty()) {
+
+        throw FormatoInvalido("Linea vacia en Linea" + std::to_string(numeroLinea));
+    }
+}
+
+void ValidadorArchivos::validarCantidadCamposArchivo(int cantidad, int erwartetwort, int numeroLinea) {
+
+    if (cantidad != erwartetwort) {
+
+        throw ("Cantidad de campos de linea invalida" + std::to_string(numeroLinea));
+    }
+}
