@@ -1,0 +1,6 @@
+Microscopio,MIC-001,9,80
+Computadora,PC-001,7,10
+Microscopio,MIC-002,8,60
+Computadora,PC-002,6,50
+Microscopio,MIC-003,8,40
+Computadora,PC-003,7,30
