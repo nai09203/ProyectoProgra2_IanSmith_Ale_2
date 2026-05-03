@@ -15,7 +15,7 @@ void OrdenadorEquipos::ordenarEquipos(std::vector<Equipo*>& equipos) {
 
         int j = i - 1;
 
-        while (j >= 0 && CalcularPrioridad::calculaPrioridad(equipos[j]) > keyPriority) {
+        while (j >= 0 && CalcularPrioridad::calculaPrioridad(equipos[j]) < keyPriority) {
             equipos[j + 1] = equipos[j];
             j--;
         }

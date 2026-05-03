@@ -5,13 +5,14 @@
 #ifndef PROYECTOPROGRA2_IANSMITH_ALE__VALIDADORARCHIVOS_H
 #define PROYECTOPROGRA2_IANSMITH_ALE__VALIDADORARCHIVOS_H
 #include <string>
+#include <cstddef>
 
 class ValidadorArchivos {
 
 public:
     static void validarAperturaArchivo(bool abierto, const std::string& ruta);
     static void validarLineaNoVaciaArchivo(const std::string& linea, int numeroLinea);
-    static void validarCantidadCamposArchivo(int cantidad, int esperado, int numeroLinea);
+    static void validarCantidadCamposArchivo(std::size_t cantidad, std::size_t esperado, int numeroLinea);
 };
 
 

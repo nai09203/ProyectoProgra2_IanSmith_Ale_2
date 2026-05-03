@@ -9,7 +9,7 @@ LimpiezaDeco::LimpiezaDeco(Mantenimiento *m): MantenimientoDecorator(m){}
 
 void LimpiezaDeco::ejecutarMantenimiento(Equipo *e) {
     MantenimientoDecorator::ejecutarMantenimiento(e);
-    e->mejorarEstado(4);
+    e->mejorarEstado(6);
 }
 std::string LimpiezaDeco::describcionMantenimiento() const {
     return MantenimientoDecorator::describcionMantenimiento() + "+ Limpieza";

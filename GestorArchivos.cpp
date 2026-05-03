@@ -9,6 +9,7 @@
 #include "ValidadorArchivos.h"
 #include "TextEquipo.h"
 #include "TextIncidencia.h"
+#include "Reportador.h"
 
 std::vector<Equipo*> GestorArchivos::cargarEquipos(const std::string& ruta) {
 
@@ -54,4 +55,10 @@ void GestorArchivos::guardarReporte(const std::string& ruta, const std::string& 
     ValidadorArchivos::validarAperturaArchivo(archivo.is_open(), ruta);
 
     archivo << contenido;
+}
+
+void GestorArchivos::guardarReporteGeneral(const std::string& ruta, std::vector<Equipo*>& todos) {
+    // Genera el contenido usando Reportador y reutiliza guardarReporte para escribirlo
+    std::string contenido = Reportador::ReporteGeneral(todos);
+    guardarReporte(ruta, contenido);
 }

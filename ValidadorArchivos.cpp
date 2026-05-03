@@ -22,7 +22,7 @@ void ValidadorArchivos::validarLineaNoVaciaArchivo(const std::string &linea, int
     }
 }
 
-void ValidadorArchivos::validarCantidadCamposArchivo(int cantidad, int erwartetwort, int numeroLinea) {
+void ValidadorArchivos::validarCantidadCamposArchivo(std::size_t cantidad, std::size_t erwartetwort, int numeroLinea) {
 
     if (cantidad != erwartetwort) {
 

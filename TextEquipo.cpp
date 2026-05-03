@@ -12,6 +12,20 @@
 #include "ValidadorEquipo.h"
 #include "FormatoInvalido.hpp"
 
+namespace {
+    std::string trimCampo(const std::string& valor) {
+        size_t inicio = 0;
+        while (inicio < valor.size() && (valor[inicio] == ' ' || valor[inicio] == '\t' || valor[inicio] == '\r' || valor[inicio] == '\n')) {
+            inicio++;
+        }
+        size_t fin = valor.size();
+        while (fin > inicio && (valor[fin - 1] == ' ' || valor[fin - 1] == '\t' || valor[fin - 1] == '\r' || valor[fin - 1] == '\n')) {
+            fin--;
+        }
+        return valor.substr(inicio, fin - inicio);
+    }
+}
+
 Equipo* TextEquipo::convertir(const std::string& linea, int numeroLinea) {
 
     std::vector<std::string> campos;
@@ -19,13 +33,13 @@ Equipo* TextEquipo::convertir(const std::string& linea, int numeroLinea) {
     std::string campo;
 
     while ( std::getline(ss, campo, ',') ) {
-        campos.push_back(campo);
+        campos.push_back(trimCampo(campo));
     }
 
-    ValidadorArchivos::validarCantidadCamposArchivo(static_cast<int>(campos.size()), 4, numeroLinea);
+    ValidadorArchivos::validarCantidadCamposArchivo(campos.size(), 4, numeroLinea);
 
-    std::string tipo = campos[0];
-    std::string codigo = campos[1];
+    std::string tipo = trimCampo(campos[0]);
+    std::string codigo = trimCampo(campos[1]);
     int criticidad = std::stoi(campos[2]);
     int estado = std::stoi(campos[3]);
 
