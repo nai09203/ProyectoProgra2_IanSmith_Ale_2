@@ -57,7 +57,5 @@ void Simulador::ejecutarsimulacion() {
         std::string reporte = Reportador::generarReporteDia(dia, seleccionados);
         gestorArchivos_->guardarReporte("Reporte Dia" + std::to_string(dia)+ ".txt", reporte);
     }
-
-    // Al finalizar los 30 dias, generar y guardar el reporte general con todos los equipos
     gestorArchivos_->guardarReporteGeneral("reporte_final.txt", equipos_);
 }

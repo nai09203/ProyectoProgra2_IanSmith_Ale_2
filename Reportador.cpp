@@ -46,8 +46,8 @@ std::string Reportador::generarReporteDia(int dia, const std::vector<Equipo *> &
 std::string Reportador::ReporteGeneral(std::vector <Equipo *> &todos) {
     std::stringstream s;
 
-    s << "=== Reporte de 30 dias ===\n\n";
-    s << "Estado final de equipos:\n";
+    s << " Reporte de 30 dias "<<std::endl; ;
+    s << "Estado final de equipos:"<<std::endl;
 
     std::vector<Equipo*> ordenados = todos;
     OrdenadorEquipos::ordenarEquipos(ordenados);
@@ -64,18 +64,17 @@ std::string Reportador::ReporteGeneral(std::vector <Equipo *> &todos) {
           << "   | Incidencias Activas: " << ordenados[i]->contarIncidenciasActivas()
           << "   | Modelo antes de simulacion: " << ordenados[i]->getTipoEquipo()
           << "   | Criticidad: " << ordenados[i]->getCriticidadEquipo()
-          << "\n";
+          <<std::endl;
     }
 
-    s << "\n";
+    s << std::endl;
 
-    // Calculo simple de riesgo: suma de prioridades y promedio
     double riesgoGlobal = totalPrioridad;
     double promedio = ordenados.empty() ? 0.0 : (totalPrioridad / ordenados.size());
 
-    s << "Riesgo global final: " << riesgoGlobal << "\n";
-    s << "Promedio prioridad: " << promedio << "\n";
-    s << "Total de equipos en simulacion: " << ordenados.size() << "\n";
+    s << "Riesgo global final: " << riesgoGlobal <<std::endl;;
+    s << "Promedio prioridad: " << promedio << std::endl;;
+    s << "Total de equipos en simulacion: " << ordenados.size() << std::endl;;
 
     return s.str();
 }

@@ -5,7 +5,7 @@
 #ifndef PROYECTOPROGRA2_IANSMITH_ALE__VALIDADORARCHIVOS_H
 #define PROYECTOPROGRA2_IANSMITH_ALE__VALIDADORARCHIVOS_H
 #include <string>
-#include <cstddef>
+
 
 class ValidadorArchivos {
 

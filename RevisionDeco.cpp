@@ -12,7 +12,7 @@ void RevisionDeco::ejecutarMantenimiento(Equipo* e) {
     MantenimientoDecorator::ejecutarMantenimiento(e);
 
     e->cerrarIncidenciasActivas();
-    e->mejorarEstado(8);
+    e->mejorarEstado(40);
 }
 std::string RevisionDeco::describcionMantenimiento() const {
     return MantenimientoDecorator::describcionMantenimiento() + "+ Revisión";

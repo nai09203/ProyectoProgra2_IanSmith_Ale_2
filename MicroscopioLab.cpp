@@ -12,11 +12,11 @@ std::string MicroscopioLab::getTipoEquipo() const {
 }
 
 void MicroscopioLab::degradar() {
-    disminuirEstado(8);
+    disminuirEstado(5);
     aumentarTiempoInactivo();
 
 }
 
 void MicroscopioLab::calibrarMicroscopio() {
-    mejorarEstado(2);
+    mejorarEstado(40);
 }

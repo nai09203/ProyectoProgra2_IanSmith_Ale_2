@@ -5,8 +5,7 @@
 #include "Planificador.h"
 #include "Equipo.h"
 #include "OrdenadorEquipos.h"
-
-std::vector<Equipo *> Planificador::seleccionarEquipos(std::vector<Equipo*> &equipos) {
+std::vector<Equipo*> Planificador::seleccionarEquipos(std::vector<Equipo*>& equipos) {
     OrdenadorEquipos::ordenarEquipos(equipos);
 
     std::vector<Equipo*> seleccionados;
@@ -19,10 +18,10 @@ std::vector<Equipo *> Planificador::seleccionarEquipos(std::vector<Equipo*> &equ
         seleccionados.push_back(equipos[i]);
     }
 
-    // Garantiza al menos una computadora si existe en la lista
+
     bool tieneComputadora = false;
     for (Equipo* e : seleccionados) {
-        if (e != nullptr && e->getTipoEquipo().find("Computadora") != std::string::npos) {
+        if (e != nullptr && e->getTipoEquipo() == "Computadora de Laboratorio") {
             tieneComputadora = true;
             break;
         }
@@ -30,10 +29,7 @@ std::vector<Equipo *> Planificador::seleccionarEquipos(std::vector<Equipo*> &equ
 
     if (!tieneComputadora) {
         for (Equipo* candidato : equipos) {
-            if (candidato == nullptr) {
-                continue;
-            }
-            if (candidato->getTipoEquipo().find("Computadora") == std::string::npos) {
+            if (candidato == nullptr || candidato->getTipoEquipo() != "Computadora de Laboratorio") {
                 continue;
             }
 

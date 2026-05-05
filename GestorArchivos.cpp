@@ -58,7 +58,7 @@ void GestorArchivos::guardarReporte(const std::string& ruta, const std::string& 
 }
 
 void GestorArchivos::guardarReporteGeneral(const std::string& ruta, std::vector<Equipo*>& todos) {
-    // Genera el contenido usando Reportador y reutiliza guardarReporte para escribirlo
+
     std::string contenido = Reportador::ReporteGeneral(todos);
     guardarReporte(ruta, contenido);
 }

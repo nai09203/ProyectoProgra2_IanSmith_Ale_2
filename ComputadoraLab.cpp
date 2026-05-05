@@ -14,10 +14,10 @@ std::string ComputadoraLab::getTipoEquipo()const{
 
 void ComputadoraLab::degradar() {
 
-    disminuirEstado(9);
+    disminuirEstado(10);
     aumentarTiempoInactivo();
 }
 
 void ComputadoraLab::limpiarCompu() {
-    mejorarEstado(3);
+    mejorarEstado(60);
 }

@@ -11,7 +11,7 @@ void MantenimientoBase::ejecutarMantenimiento(Equipo *e) {
 
         throw FormatoInvalido("No se puede ejecutar el mantenimiento a un equipo nulo");
     }
-    e->mejorarEstado(7);
+    e->mejorarEstado(40);
 }
 std::string MantenimientoBase::describcionMantenimiento()const {
     return "Mantenimiento Base";
