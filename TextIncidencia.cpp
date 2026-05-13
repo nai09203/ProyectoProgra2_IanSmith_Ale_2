@@ -26,14 +26,15 @@ namespace {
     }
 }
 
-Equipo* TextIncidencia::buscarEquipo(const std::string& codigo, std::vector<Equipo*> &equipos) {
-
-    for (Equipo* e : equipos) {
-        if ( e != nullptr && e->getCodigoEquipo() == codigo) {
-            return e;
-        }
+Equipo* TextIncidencia::buscarEquipo(const std::string& codigo, std::vector<Equipo*>& equipos) {
+    int izq = 0;
+    int der = (int)equipos.size() - 1;
+    while (izq <= der) {
+        int mid = (izq + der) / 2;
+        if (equipos[mid]->getCodigoEquipo() == codigo) return equipos[mid];
+        if (equipos[mid]->getCodigoEquipo() < codigo) izq = mid + 1;
+        else der = mid - 1;
     }
-
     return nullptr;
 }
 

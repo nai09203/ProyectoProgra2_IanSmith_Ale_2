@@ -26,6 +26,6 @@ void ValidadorArchivos::validarCantidadCamposArchivo(std::size_t cantidad, std::
 
     if (cantidad != erwartetwort) {
 
-        throw ("Cantidad de campos de linea invalida" + std::to_string(numeroLinea));
+        throw FormatoInvalido("Cantidad de campos de linea invalida" + std::to_string(numeroLinea));
     }
 }

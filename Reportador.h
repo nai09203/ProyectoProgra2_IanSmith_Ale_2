@@ -11,7 +11,7 @@ class Equipo;
 
 class Reportador {
 public:
-    static std::string generarReporteDia(int dia, const std::vector<Equipo*>& seleccionados);
+    static std::string generarReporteDia(int dia, const std::vector<Equipo*>& seleccionados, const std::vector<Equipo*>& todos);
     static std::string ReporteGeneral(std::vector<Equipo*>& todos);
 };
 

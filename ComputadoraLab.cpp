@@ -14,7 +14,7 @@ std::string ComputadoraLab::getTipoEquipo()const{
 
 void ComputadoraLab::degradar() {
 
-    disminuirEstado(10);
+    disminuirEstado(2);
     aumentarTiempoInactivo();
 }
 

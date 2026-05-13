@@ -9,36 +9,33 @@
 #include "CalcularPrioridad.h"
 #include "OrdenadorEquipos.h"
 
-std::string Reportador::generarReporteDia(int dia, const std::vector<Equipo *> &seleccionados) {
+std::string Reportador::generarReporteDia(int dia, const std::vector<Equipo*>& seleccionados, const std::vector<Equipo*>& todos) {
     std::stringstream s;
+    s << "Dia: " << dia << std::endl;
 
-    s<<"Dia: "<<dia <<std::endl;
-
-    s<<"Top Prioridad: ";
-
+    s << "Top Prioridad: ";
     for (size_t i = 0; i < seleccionados.size(); i++) {
-
         double prior = CalcularPrioridad::calculaPrioridad(seleccionados[i]);
-
-        s << seleccionados[i]->getCodigoEquipo()<< " (" << prior << ")"
-        << " estado: " << seleccionados[i]->getEstadoEquipo();
-
-        if ( i < seleccionados.size() - 1 ) {
-            s<< ", ";
-        }
+        s << seleccionados[i]->getCodigoEquipo() << " (" << prior << ")"
+          << " estado: " << seleccionados[i]->getEstadoEquipo();
+        if (i < seleccionados.size() - 1) s << ", ";
     }
-    s<<std::endl;
+    s << std::endl;
 
-    s<<"Asignados: ";
-
+    s << "Asignados: ";
     for (size_t i = 0; i < seleccionados.size(); i++) {
-        s<<seleccionados[i]->getCodigoEquipo();
-
-        if ( i < seleccionados.size() - 1 ) {
-            s<< ", ";
-        }
+        s << seleccionados[i]->getCodigoEquipo();
+        if (i < seleccionados.size() - 1) s << ", ";
     }
-    s<<std::endl;
+    s << std::endl;
+
+    // Backlog y riesgo — NUEVO
+    int backlog = (int)todos.size() - (int)seleccionados.size();
+    s << "Backlog pendiente: " << backlog << std::endl;
+
+    double riesgo = 0;
+    for (Equipo* e : todos) riesgo += CalcularPrioridad::calculaPrioridad(e);
+    s << "Riesgo global: " << riesgo << std::endl;
 
     return s.str();
 }
