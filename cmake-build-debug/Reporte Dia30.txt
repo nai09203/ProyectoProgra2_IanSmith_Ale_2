@@ -1,0 +1,5 @@
+Dia: 30
+Top Prioridad: PC-082 (3) estado: 100, PC-083 (3) estado: 100, PC-084 (3) estado: 100
+Asignados: PC-082, PC-083, PC-084
+Backlog pendiente: 97
+Riesgo global: 813.2

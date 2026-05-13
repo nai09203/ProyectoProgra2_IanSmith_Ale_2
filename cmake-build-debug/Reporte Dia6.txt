@@ -1,0 +1,5 @@
+Dia: 6
+Top Prioridad: MIC-011 (4) estado: 100, MIC-012 (4) estado: 100, PC-056 (3) estado: 100
+Asignados: MIC-011, MIC-012, PC-056
+Backlog pendiente: 97
+Riesgo global: 531.2

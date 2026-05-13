@@ -1,0 +1,3 @@
+D:/ING SISTEMAS/PROGRA II/PROYECTO I/cmake-build-debug/CMakeFiles/ProyectoProgra2_IanSmith_Ale_.dir
+D:/ING SISTEMAS/PROGRA II/PROYECTO I/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/ING SISTEMAS/PROGRA II/PROYECTO I/cmake-build-debug/CMakeFiles/rebuild_cache.dir
